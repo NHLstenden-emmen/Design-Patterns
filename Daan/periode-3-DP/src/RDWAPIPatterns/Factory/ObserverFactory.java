@@ -1,4 +1,10 @@
-package RDWAPIPatterns;
+package RDWAPIPatterns.Factory;
+
+import RDWAPIPatterns.Decorator.CachingDecorator;
+import RDWAPIPatterns.LicenseSubject;
+import RDWAPIPatterns.Observers.CacheObserver;
+import RDWAPIPatterns.Observers.LicenseObserver;
+import RDWAPIPatterns.Observers.Observer;
 
 // A factory that can create different type of observers
 public class ObserverFactory {

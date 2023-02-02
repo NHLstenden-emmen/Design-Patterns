@@ -1,5 +1,7 @@
 package RDWAPIPatterns;
 
+import RDWAPIPatterns.Observers.Observer;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -7,7 +9,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-class LicenseSubject {
+public class LicenseSubject {
     // A list of all registered observers.
     private List<Observer> observers = new ArrayList<>();
     // The state of the subject.

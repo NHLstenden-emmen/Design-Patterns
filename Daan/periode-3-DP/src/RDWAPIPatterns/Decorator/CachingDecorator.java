@@ -1,4 +1,6 @@
-package RDWAPIPatterns;
+package RDWAPIPatterns.Decorator;
+
+import RDWAPIPatterns.LicenseSubject;
 
 import java.util.HashMap;
 import java.util.Map;

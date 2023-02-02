@@ -1,4 +1,6 @@
-package RDWAPIPatterns;
+package RDWAPIPatterns.Observers;
+
+import RDWAPIPatterns.LicenseSubject;
 
 public class LicenseObserver implements Observer {
     // The subject being observed.

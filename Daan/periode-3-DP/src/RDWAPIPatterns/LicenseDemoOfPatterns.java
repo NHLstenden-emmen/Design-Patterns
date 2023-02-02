@@ -1,6 +1,9 @@
 package RDWAPIPatterns;
 
-public class LicensePatternImplementations {
+import RDWAPIPatterns.Decorator.CachingDecorator;
+import RDWAPIPatterns.Observers.LicenseObserver;
+
+public class LicenseDemoOfPatterns {
     public static void main(String[] args) {
         /* Demo of the observer pattern
 
@@ -59,5 +62,18 @@ public class LicensePatternImplementations {
         licenseSubjectOne.getLicensePlateData();
 
          */
+
+       // Demo of the Singleton pattern
+
+        // Create a subject
+        CachingDecorator licenseSubjectOne = new CachingDecorator();
+        LicenseObserver observer1 = new LicenseObserver(licenseSubjectOne);
+
+        // use the logger to log license plate
+        licenseSubjectOne.setLicense("TRHP81");
+        licenseSubjectOne.getLicensePlateData();
+
+        SingletonLogger logger = SingletonLogger.getInstance();
+        logger.logLicense(licenseSubjectOne.getLicense());
     }
 }

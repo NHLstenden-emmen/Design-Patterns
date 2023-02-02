@@ -1,4 +1,6 @@
-package RDWAPIPatterns;
+package RDWAPIPatterns.Observers;
+
+import RDWAPIPatterns.Decorator.CachingDecorator;
 
 public class CacheObserver implements Observer {
     // The subject being observed.
