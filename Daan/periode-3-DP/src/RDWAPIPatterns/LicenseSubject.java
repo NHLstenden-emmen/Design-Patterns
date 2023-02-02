@@ -54,7 +54,6 @@ class LicenseSubject {
             // If an exception is thrown, print the stack trace to the console
             e.printStackTrace();
         }
-
         return null;
     }
 

@@ -19,4 +19,16 @@ public class CachingDecorator extends LicenseSubject {
             System.out.println("Retrieving data from API: " + data);
         }
     }
+
+    public Map<String, String> getCache() {
+        return cache;
+    }
+
+    public int getCacheSize() {
+        return cache.size();
+    }
+
+    public void setCache(Map<String, String> cache) {
+        this.cache = cache;
+    }
 }
