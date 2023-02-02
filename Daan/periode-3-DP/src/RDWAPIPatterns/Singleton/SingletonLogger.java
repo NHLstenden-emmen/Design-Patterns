@@ -1,4 +1,4 @@
-package RDWAPIPatterns;
+package RDWAPIPatterns.Singleton;
 
 import java.io.FileWriter;
 import java.io.IOException;

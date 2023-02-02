@@ -2,6 +2,7 @@ package RDWAPIPatterns;
 
 import RDWAPIPatterns.Decorator.CachingDecorator;
 import RDWAPIPatterns.Observers.LicenseObserver;
+import RDWAPIPatterns.Singleton.SingletonLogger;
 
 public class LicenseDemoOfPatterns {
     public static void main(String[] args) {
