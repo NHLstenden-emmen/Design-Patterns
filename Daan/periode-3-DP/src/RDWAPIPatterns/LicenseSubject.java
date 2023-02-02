@@ -1,4 +1,4 @@
-package RDWAPIObserver;
+package RDWAPIPatterns;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -14,27 +14,48 @@ class LicenseSubject {
     private String license;
 
     public void getLicensePlateData() {
-        String baseReportURL = "https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=" + license;
+        String data = retrieveDataFromAPI();
+        System.out.println("Retrieving data from API: " + data);
+    }
+
+    protected String retrieveDataFromAPI() {
+        String baseReportURL = "https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=" + getLicense();
 
         try {
+            // Create a URL object from the base URL string
             URL url = new URL(baseReportURL);
+
+            // Open an HttpURLConnection using the URL object
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+            // Set the request method to GET, indicating that data is to be retrieved from the API
             con.setRequestMethod("GET");
 
+            // Get the response code returned by the API
             int status = con.getResponseCode();
 
+            // Create a BufferedReader to read the data returned by the API
             BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+            // Read each line of the data returned by the API
             String inputLine;
             StringBuilder content = new StringBuilder();
             while ((inputLine = in.readLine()) != null) {
+                // Append each line of data to the `content` string builder
                 content.append(inputLine);
             }
+
+            // Close the BufferedReader
             in.close();
 
-            System.out.println(content);
+            // Return the data
+            return content.toString();
         } catch (Exception e) {
+            // If an exception is thrown, print the stack trace to the console
             e.printStackTrace();
         }
+
+        return null;
     }
 
     // Getter for the subject's state.

@@ -1,4 +1,4 @@
-package RDWAPIObserver;
+package RDWAPIPatterns;
 
 // The interface that all observers must implement.
 interface Observer {
