@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1437dcce-93a6-4973-a791-0a8be56ded0a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/oefenen.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/src/Decorator1/Rectangle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/src/Decorator1/RodeShapeDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/src/Decorator1/Shape.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/src/Decorator1/ShapeDecorator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/src/Decorator1/main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/src/Observer/Clazz.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/src/Observer/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/src/Observer/Observer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oefenen/src/Observer/ObserverObserver.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
+  <component name="ProjectId" id="2LBY1GS6nXwZYaSQRfQRrmeeHlL" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Yaell/Documents/GitHub/Design-Patterns&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="Design-Patterns" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="Design-Patterns" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1437dcce-93a6-4973-a791-0a8be56ded0a" name="Changes" comment="" />
+      <created>1675345725355</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1675345725355</updated>
+    </task>
+    <servers />
+  </component>
+</project>
