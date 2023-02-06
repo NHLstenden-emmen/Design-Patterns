@@ -6,16 +6,17 @@ import java.util.Map;
 
 public class CachingDecorator extends LicenseSubject {
     private Map<String, String> cache = new HashMap<>();
+    private String license;
 
     @Override
-    public void getLicensePlateData() {
+    public void getLicensePlateData(String license) {
         // Check if the license plate data has been stored in the cache
         if (cache.containsKey(getLicense())) {
             // If the data is in the cache, retrieve it from there
             System.out.println("Retrieving data from cache: " + cache.get(getLicense()));
         } else {
             // If the data is not in the cache, retrieve it from the API and store it in the cache
-            String data = retrieveDataFromAPI();
+            String data = retrieveDataFromAPI(license);
             cache.put(getLicense(), data);
             System.out.println("Retrieving data from API: " + data);
         }

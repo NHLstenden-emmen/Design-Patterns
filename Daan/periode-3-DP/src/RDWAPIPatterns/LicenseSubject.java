@@ -15,13 +15,13 @@ public class LicenseSubject {
     // The state of the subject.
     private String license;
 
-    public void getLicensePlateData() {
-        String data = retrieveDataFromAPI();
+    public void getLicensePlateData(String license) {
+        String data = retrieveDataFromAPI(license);
         System.out.println("Retrieving data from API: " + data);
     }
 
-    protected String retrieveDataFromAPI() {
-        String baseReportURL = "https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=" + getLicense();
+    protected String retrieveDataFromAPI(String license) {
+        String baseReportURL = "https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=" + license;
 
         try {
             // Create a URL object from the base URL string

@@ -72,7 +72,7 @@ public class LicenseDemoOfPatterns {
 
         // use the logger to log license plate
         licenseSubjectOne.setLicense("89NLBN");
-        licenseSubjectOne.getLicensePlateData();
+        licenseSubjectOne.getLicensePlateData(licenseSubjectOne.getLicense());
 
         SingletonLogger logger = SingletonLogger.getInstance();
         logger.logLicense(licenseSubjectOne.getLicense());
