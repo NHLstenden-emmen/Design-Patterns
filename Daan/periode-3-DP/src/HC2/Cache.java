@@ -1,40 +1,33 @@
 package HC2;
 
-import HC2.States.CacheStateFull;
-import HC2.States.EmptyState;
+import HC2.States.State;
+import HC2.States.fullState;
 
 import java.util.HashMap;
 
 public class Cache {
-    private EmptyState state;
+    private State state;
     // Create a cache that can store vehicle and their data
     private HashMap<String, HashMap> cache = new HashMap<>();
 
-    // Constructor to initialize the state
+    // Constructor
     public Cache(State state) {
+        this.state = state;
+    }
+
+    // Set the state of the cache
+    public void setState(State state) {
         this.state = state;
     }
 
     // Add a vehicle to the cache
     public void addVehicle(String vehicle, HashMap vehicleData) {
-        // If the cache is full, call the addVehicle method of the state
+        cache.put(vehicle, vehicleData);
+        // Check if the cache is full
         if (cache.size() == 3) {
-            state.addVehicle(vehicle, vehicleData);
+            setState(new fullState());
         }
-        // Else add the vehicle to the cache
-        else {
-            cache.put(vehicle, vehicleData);
-
-            // If the cache is full, change the state to CacheStateFull
-            if (cache.size() == 3) {
-                setState(new CacheStateFull());
-            }
-        }
-    }
-
-    // change the state of the cache
-    public void setState(CacheStateFull state) {
-        this.state = state;
+        state.doAction();
     }
 
     // Get a vehicle from the cache
