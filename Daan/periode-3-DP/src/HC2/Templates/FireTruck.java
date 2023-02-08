@@ -1,16 +1,17 @@
 package HC2.Templates;
 
-public class fireTruck extends VehicleTemplate {
+public class FireTruck extends VehicleTemplate {
 
     private int waterTankCapacity;
     private boolean siren;
-    public fireTruck(boolean ignition, int gears, int waterTankCapacity, boolean siren) {
+    public FireTruck(boolean ignition, int gears, int waterTankCapacity, boolean siren) {
         super(ignition, gears);
         this.waterTankCapacity = waterTankCapacity;
         this.siren = siren;
     }
 
     public int getWaterTankCapacity() {
+        System.out.println(waterTankCapacity);
         return waterTankCapacity;
     }
 

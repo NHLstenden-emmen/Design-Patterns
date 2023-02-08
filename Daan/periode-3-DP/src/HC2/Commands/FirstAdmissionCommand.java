@@ -15,10 +15,8 @@ public class FirstAdmissionCommand implements Command {
         params.put("datum_eerste_toelating", formatDate(input));
 
         String url = buildUrl(BASE_REPORT_URL ,params);
-        System.out.println(url);
 
         String response = getResponse((url));
-        System.out.println(response);
         return response;
     }
 }

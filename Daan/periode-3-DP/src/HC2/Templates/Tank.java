@@ -1,9 +1,9 @@
 package HC2.Templates;
 
-public class tank extends VehicleTemplate {
+public class Tank extends VehicleTemplate {
     private boolean cannon;
     private int armorRating;
-    public tank(boolean ignition, int gears, boolean cannon, int armorRating) {
+    public Tank(boolean ignition, int gears, boolean cannon, int armorRating) {
         super(ignition, gears);
         this.cannon = cannon;
         this.armorRating = armorRating;
@@ -18,6 +18,7 @@ public class tank extends VehicleTemplate {
     }
 
     public int getArmorRating() {
+        System.out.println(armorRating);
         return armorRating;
     }
 

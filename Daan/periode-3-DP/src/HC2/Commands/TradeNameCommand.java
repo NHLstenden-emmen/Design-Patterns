@@ -15,10 +15,8 @@ public class TradeNameCommand implements Command {
         params.put("handelsbenaming", formatNaming(input));
 
         String url = buildUrl(BASE_REPORT_URL ,params);
-        System.out.println(url);
 
         String response = getResponse((url));
-        System.out.println(response);
         return response;
     }
 }
