@@ -1,6 +1,6 @@
 package Iterators;
 
-import Iterators.Cache;
+import HC2.Cache;
 
 import java.util.HashMap;
 import java.util.Iterator;

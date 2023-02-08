@@ -1,6 +1,9 @@
 import HC2.Adapters.ApiResponseAdapter;
+import HC2.Cache;
 import HC2.Commands.*;
 import HC2.Facade.CommandFacade;
+import HC2.States.EmptyState;
+import HC2.States.NormalState;
 import HC2.Templates.*;
 import Iterators.*;
 import java.util.HashMap;
@@ -51,15 +54,19 @@ public class Main {
         System.out.println(vehicleData3.get("datum_eerste_toelating") + " is van het merk " + vehicleData3.get("merk"));
 
         // Demo van de iterator pattern
-        Cache cache = new Cache();
+        EmptyState emptyState = new EmptyState();
+        Cache cache = new Cache(emptyState);
         cache.addVehicle("TRHP81", vehicleData1);
         cache.addVehicle(("89NLBN"), CommandFacade.getFormattedVehicleData("89NLBN"));
         cache.addVehicle(("69RGHF"), CommandFacade.getFormattedVehicleData("69RGHF"));
 
+        // print de demo iterator pattern
         CacheIterator cacheIterator = new CacheIterator(cache);
         while (cacheIterator.hasNext()) {
             System.out.println(cacheIterator.next().getKey());
         }
+
+
 
     }
 }
