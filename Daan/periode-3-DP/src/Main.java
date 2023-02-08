@@ -1,6 +1,10 @@
 import HC2.Adapters.ApiResponseAdapter;
 import HC2.Cache;
 import HC2.Commands.*;
+import HC2.Composites.CarComposite;
+import HC2.Composites.Cylinders;
+import HC2.Composites.EngineCapacity;
+import HC2.Composites.Model;
 import HC2.Facade.CommandFacade;
 import HC2.States.*;
 import HC2.Templates.*;
@@ -64,5 +68,13 @@ public class Main {
         while (cacheIterator.hasNext()) {
             System.out.println(cacheIterator.next().getKey());
         }
+
+        // print de demo Composite pattern
+        CarComposite carComposite = new CarComposite();
+        carComposite.add(new Model());
+        carComposite.add(new Cylinders());
+        carComposite.add(new EngineCapacity());
+
+        carComposite.operation();
     }
 }
