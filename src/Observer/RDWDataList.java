@@ -14,10 +14,10 @@ public class RDWDataList {
         observers.remove(observer);
     }
 
-    public void updateData(List<RDWData> newData) {
-        data = newData;
-        for (Observer observer : observers) {
-            observer.update(data);
-        }
-    }
+//    public void updateData(List<RDWData> newData) {
+//        data = newData;
+//        for (Observer observer : observers) {
+//            observer.update(data);
+//        }
+//    }
 }

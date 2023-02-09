@@ -12,11 +12,11 @@ public class RDWDataManager {
         return instance;
     }
 
-    public void addRDWData(RDWData data) {
-        this.data.add(data);
-    }
-
-    public List<RDWData> getRDWData() {
-        return data;
-    }
+//    public void addRDWData(RDWData data) {
+//        this.data.add(data);
+//    }
+//
+//    public List<RDWData> getRDWData() {
+//        return data;
+//    }
 }
