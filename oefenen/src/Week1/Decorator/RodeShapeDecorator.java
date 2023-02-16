@@ -1,4 +1,4 @@
-package Decorator;
+package Week1.Decorator;
 
 public class RodeShapeDecorator extends ShapeDecorator{
     public RodeShapeDecorator(Shape decoratedShape)

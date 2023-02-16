@@ -1,4 +1,4 @@
-package Decorator;
+package Week1.Decorator;
 
 public class Rectangle implements Shape{
     @Override

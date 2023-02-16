@@ -1,4 +1,4 @@
-package Observer;
+package Week1.Observer;
 
 public class ObserverObserver implements Observer {
     @Override

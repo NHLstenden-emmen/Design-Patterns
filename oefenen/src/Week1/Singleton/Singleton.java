@@ -1,4 +1,4 @@
-package Singleton;
+package Week1.Singleton;
 
 public class Singleton {
     private static Singleton instance;

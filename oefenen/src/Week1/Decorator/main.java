@@ -1,4 +1,4 @@
-package Decorator;
+package Week1.Decorator;
 
 public class main {
     public static void main(String[] args)

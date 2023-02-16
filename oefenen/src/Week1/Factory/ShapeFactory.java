@@ -1,6 +1,6 @@
-package Factory;
+package Week1.Factory;
 
-import Decorator.Rectangle;
+import Week1.Decorator.Rectangle;
 public class ShapeFactory {
     public Rectangle getShape(String shapeType){
         if(shapeType == null){
