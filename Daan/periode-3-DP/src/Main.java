@@ -1,14 +1,24 @@
 import HC2.Adapters.ApiResponseAdapter;
 import HC2.Cache;
-import HC2.Commands.*;
+import HC2.Commands.Command;
+import HC2.Commands.LicenseCommand;
+import HC2.Commands.TradeNameCommand;
 import HC2.Composites.CarComposite;
 import HC2.Composites.Cylinders;
 import HC2.Composites.EngineCapacity;
 import HC2.Composites.Model;
 import HC2.Facade.CommandFacade;
-import HC2.States.*;
-import HC2.Templates.*;
-import Iterators.*;
+import HC2.MVC.Controller;
+import HC2.MVC.Model2;
+import HC2.MVC.View;
+import HC2.Proxy.CommandProxy;
+import HC2.States.State;
+import HC2.States.emptyState;
+import HC2.Templates.FireTruck;
+import HC2.Templates.Tank;
+import HC2.Templates.VehicleTemplate;
+import Iterators.CacheIterator;
+
 import java.util.HashMap;
 
 ;
@@ -76,5 +86,24 @@ public class Main {
         carComposite.add(new EngineCapacity());
 
         carComposite.operation();
+
+        // Split prints
+
+        System.out.println("COLLEGE 3");
+        System.out.println("COLLEGE 3");
+        System.out.println("COLLEGE 3");
+        System.out.println("COLLEGE 3");
+        System.out.println("COLLEGE 3");
+
+        // Demo van de Proxy pattern (VGM echt totaal niet geschikt voor onze applicatie)
+        Command command = new CommandProxy();
+        command.execute("TRHP81");
+
+        // Demo van de MVC pattern
+        View view = new View();
+        Model2 model = new Model2();
+        Controller controller = new Controller(model, view);
+
+        controller.printLicensePlateData("TRHP81");
     }
 }
