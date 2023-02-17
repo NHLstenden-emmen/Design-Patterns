@@ -1,24 +1,41 @@
 # Design-Patterns
 
 ## Desing pattern
+
 ### Rapporten 
-- standaard kenteken rapport met alle informatie
-- puur checken of kilometer stand logisch is (en of verzekerd is?)
-- Rapport waar je kan zien welke voertuigen van jou auto type op dezelfde dag zijn toegelaten (dus filter op merk, modelnaam en toelatingsdatum) 
-- Vergelijken van twee auto's (kijken of hier een pattern bij kan)
 
-### State
-- Apk status (hoeveel maanden/dagen nog apk, wanneer opnieuw gekeurd etc)
+#### Standaard rapport
+Op basis van het kenteken wordt de voertuig informatie opgehaald en weggeschreven naar een bestand (het rapport).
 
-### Adapter 
-- Voor de terurn omzetten naar bruikbare data 
-- Formatters
+#### Kilometer stand controle
+Op basis van een of meerdere kentekens wordt opgehaald of deze kloppend is (NAP Status) en dit wordt weggeschreven naar een bestand waar de kentekens onder elkaar staan, met hierna een JA of NEE aangegeven voor het kloppen van de KM-stand. Hierbij wordt ook weergegeven of hij verzekerd is of niet. 
 
-### Command 
-- Commands voor specifieke API request 
+#### Voertuig vergelijken
+De data van twee door de gebruiker aangegeven voertuigen worden opgehaald. Nadat deze is opgehaald worden de verschillende velden met elkaar vergeleken (cilinder inhoud, kleur, voertuigsoort, APK Vervaldatum, BPM, etc.). Dit wordt weggeschreven naar een vergelijkingsrapport. 
 
-### Decorator 
-- Cache voor het opslaan van kentekens wanneer ze de eerste keer worden opgezocht, zodat ze de volgende keer uit de cache kunnen worden gehaald 
+#### Familie rapport
+Haalt op welke auto's van jou model op dezelfde dag zijn geregistreerd in Nederland. Opgezocht op basis van modelnaam, toelatingsdatum etc.
 
-### Factory Pattern
-- voor het opbouwen van verschillende rapporten
+
+### Patterns
+
+#### State Pattern
+Haalt de status op van de APK, zoals verlopen, gekeurd (en hoelang nog), tijd voor keuring (op basis van een bepaalde tijd voor het verlopen van APK).
+
+#### Adapter pattern API Response
+Een adapter voor het omzetten van de API response naar bruikbare data in Java.
+
+#### Adapter pattern Formatter
+Een adapter om de input (zoals kenteken, handelsbenaming etc) te formatteren naar een format die wordt geaccepteerd door de RDW API.
+
+#### Adapter Rapport
+Een Adapter om de nodig data voor het rapport om te zetten naar data die kan worden weggeschreven.
+
+#### Command 
+Aangezien de API met veel parameters werkt, wordt voor de meest frequente request commands opgesteld zodat deze niet elke keer apart moeten worden opgebouwd.
+
+#### Decorator pattern
+De standaard API request functionaliteit wordt uitgebreid door middel van een decorator met een cache systeem. Wanneer een kenteken al eerder is opgezocht wordt deze uit de cache gehaalt zodat geen onnodige API request moeten worden uitgevoerd. 
+
+#### Factory pattern
+Aangezien verschillende rapport kunnen worden opgesteld willen we een factory maken die deze verschillende rapporten kan opstellen.
