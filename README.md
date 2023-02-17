@@ -1,16 +1,14 @@
 # Design-Patterns
 
-## Desing pattern
-
 ### Rapporten 
 
 #### Standaard rapport
 Op basis van het kenteken wordt de voertuig informatie opgehaald en weggeschreven naar een bestand (het rapport).
 
-#### Kilometer stand controle
+#### Kilometer stand controle rapport
 Op basis van een of meerdere kentekens wordt opgehaald of deze kloppend is (NAP Status) en dit wordt weggeschreven naar een bestand waar de kentekens onder elkaar staan, met hierna een JA of NEE aangegeven voor het kloppen van de KM-stand. Hierbij wordt ook weergegeven of hij verzekerd is of niet. 
 
-#### Voertuig vergelijken
+#### Voertuig vergelijken rapport
 De data van twee door de gebruiker aangegeven voertuigen worden opgehaald. Nadat deze is opgehaald worden de verschillende velden met elkaar vergeleken (cilinder inhoud, kleur, voertuigsoort, APK Vervaldatum, BPM, etc.). Dit wordt weggeschreven naar een vergelijkingsrapport. 
 
 #### Familie rapport
@@ -31,7 +29,7 @@ Een adapter om de input (zoals kenteken, handelsbenaming etc) te formatteren naa
 #### Adapter Rapport
 Een Adapter om de nodig data voor het rapport om te zetten naar data die kan worden weggeschreven.
 
-#### Command 
+#### Command pattern
 Aangezien de API met veel parameters werkt, wordt voor de meest frequente request commands opgesteld zodat deze niet elke keer apart moeten worden opgebouwd.
 
 #### Decorator pattern
