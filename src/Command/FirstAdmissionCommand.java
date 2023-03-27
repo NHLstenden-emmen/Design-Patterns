@@ -21,6 +21,8 @@ public class FirstAdmissionCommand implements Command {
 
         String url = buildUrl(BASE_REPORT_URL ,params);
 
+        // TODO: Check if it already exist (momento) before performing call
+
         String response = getResponse((url));
 
         // Adapt the API response to a HashMap of key-value pairs
