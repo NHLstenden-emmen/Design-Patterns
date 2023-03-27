@@ -4,26 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="099863ef-d50e-4c6a-bcbe-bd38cbd45b2e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Adapter/Adapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Adapter/ClientInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Adapter/Service.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Command/Command.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Command/ConcreteCommand1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Command/ConcreteCommand2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Command/Invoker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Command/Reciver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Factory/ConcreteCreatorA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Factory/ConcreteCreatorB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Factory/Creator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Factory/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Memento/Caretaker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Memento/Memento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Memento/Originator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+    <list default="true" id="9ca1520a-e296-486f-b7e9-18580f830916" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Adapter/APIAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Adapter/AdapterInterface.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Design-Patterns.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Design-Patterns.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Adapter/Adapter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Adapter/ClientInterface.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +25,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -49,19 +39,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
