@@ -1,46 +1,76 @@
 package RDWReportBuilder;
 
-import API.APIBuilder;
-import Adapter.APIAdapter;
+import Command.FirstAdmissionCommand;
+import Command.LicensePlateCommand;
+import Command.TradeNameCommand;
 import Memento.RDWResponseCache;
 
 import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.Map;
 
-import static API.RDWAPIClient.getResponse;
-
 public class ReportBuilder {
-    public static void buildReport(String kenteken, RDWResponseCache cache) throws Exception {
-        HashMap<String, String> vehicleData = getVehicleData(kenteken, cache);
-        String filename = "report_" + kenteken + ".txt";
+    public static void buildReport(String licensePlate, RDWResponseCache cache) {
+        Command.LicensePlateCommand command = new LicensePlateCommand();
+        try {
+            HashMap<String, String> vehicleData = command.execute(licensePlate);
 
-        FileWriter writer = new FileWriter(filename);
+            // Build report using the vehicleData HashMap
+            // For example, you could write the data to a file:
+            String filename = "report_" + licensePlate + ".txt";
+            FileWriter writer = new FileWriter(filename);
+            for (Map.Entry<String, String> entry : vehicleData.entrySet()) {
+                writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
+            }
+            writer.close();
+            System.out.println("Successfully saved data to " + filename);
 
-        for (Map.Entry<String, String> entry : vehicleData.entrySet()) {
-            writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
+        } catch (Exception e) {
+            // Handle the exception
+            e.printStackTrace();
         }
-
-        writer.close();
-        System.out.println("Successfully saved data to " + filename);
     }
 
-    public static HashMap<String, String> getVehicleData(String kenteken, RDWResponseCache cache) throws Exception {
-        HashMap<String, String> vehicleData;
+        public static void buildReportMerk(String tradeName, RDWResponseCache cache) {
+            Command.TradeNameCommand command = new TradeNameCommand();
+            try {
+                HashMap<String, String> vehicleData = command.execute(tradeName);
 
-        HashMap<String, String> cachedResponse = cache.getResponse(kenteken);
-        if (cachedResponse != null) {
-            // Use cached response
-            vehicleData = cachedResponse;
-        } else {
-            // Make API call and store response in cache
-            Map<String, String> params = new HashMap<>();
-            params.put("kenteken", kenteken);
-            String url = APIBuilder.buildUrl(APIBuilder.BASE_REPORT_URL, params);
-            String response = getResponse(url);
-            vehicleData = new APIAdapter().adaptResponse(response);
-            cache.addResponse(kenteken, vehicleData);
+                // Build report using the vehicleData HashMap
+                // For example, you could write the data to a file:
+                String filename = "report_" + tradeName + ".txt";
+                FileWriter writer = new FileWriter(filename);
+                for (Map.Entry<String, String> entry : vehicleData.entrySet()) {
+                    writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
+                }
+                writer.close();
+                System.out.println("Successfully saved data to " + filename);
+
+            } catch (Exception e) {
+                // Handle the exception
+                e.printStackTrace();
+            }
         }
-        return vehicleData;
-    }
+    /*public static void buildReportFirstAdmission(String firstAdmission, RDWResponseCache cache) {
+       Command.FirstAdmissionCommand command = new FirstAdmissionCommand();
+        try {
+            HashMap<String, String> vehicleData = command.execute(firstAdmission);
+
+            // Build report using the vehicleData HashMap
+            // For example, you could write the data to a file:
+            String filename = "report_" + firstAdmission + ".txt";
+            FileWriter writer = new FileWriter(filename);
+            for (Map.Entry<String, String> entry : vehicleData.entrySet()) {
+                writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
+            }
+            writer.close();
+            System.out.println("Successfully saved data to " + filename);
+
+        } catch (Exception e) {
+            // Handle the exception
+            e.printStackTrace();
+        }
+    }*/
 }
+
+
