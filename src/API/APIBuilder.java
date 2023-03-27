@@ -4,7 +4,7 @@ import java.util.Map;
 public class APIBuilder {
 
     // Base URL for the RDW Open Data API
-    public static final String BASE_REPORT_URL = "https://opendata.rdw.nl/resource/m9d7-ebf2";
+    public static final String BASE_REPORT_URL = "https://opendata.rdw.nl/resource/m9d7-ebf2.json";
 
     // Parameter keys for constructing the query string
     public static final String TRADE_NAME_PARAM = "&handelsbenaming=";
