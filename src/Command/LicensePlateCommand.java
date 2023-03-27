@@ -14,7 +14,7 @@ import static java.lang.System.out;
 
 public class LicensePlateCommand implements Command{
     @Override
-    public String execute(String input) throws Exception {
+    public HashMap<String, String> execute(String input) throws Exception {
 
         // Create a HashMap to store the API parameters
         Map<String, String> params = new HashMap<>();
@@ -45,9 +45,6 @@ public class LicensePlateCommand implements Command{
         // Adapt the API response to a HashMap of key-value pairs
         HashMap<String, String> vehicleData = new APIAdapter().adaptResponse(response);
 
-        //TODO: Put data into a report
-
-        //TODO: Return and open report
-        return response;
+        return vehicleData;
     }
 }

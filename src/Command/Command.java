@@ -1,5 +1,7 @@
 package Command;
 
+import java.util.HashMap;
+
 public interface Command {
-    String execute(String input) throws Exception;
+    HashMap<String, String> execute(String input) throws Exception;
 }
