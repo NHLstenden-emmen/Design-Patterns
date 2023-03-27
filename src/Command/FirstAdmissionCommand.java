@@ -24,27 +24,21 @@ public class FirstAdmissionCommand implements Command {
         String url = buildUrl(BASE_REPORT_URL ,params);
 
         RDWResponseCache cache = new RDWResponseCache();
-        HashMap<String, String> cachedResponse = cache.getResponse(url);
+        HashMap<String, String> vehicleData = cache.getResponse(url);
 
         String response;
-        if (cachedResponse != null) {
-            // Use cached response
-            response = String.valueOf(cachedResponse);
-            for (Map.Entry<String, String> entry : cachedResponse.entrySet()) {
-                out.println(entry.getKey() + ": " + entry.getValue());
-            }
-        } else {
+        if (vehicleData == null) {
             // Make API call and store response in cache
             response = getResponse(url);
-            HashMap<String, String> vehicleData = new APIAdapter().adaptResponse(response);
+
+            // Adapt the API response to a HashMap of key-value pairs
+            vehicleData = new APIAdapter().adaptResponse(response);
             cache.addResponse(url, vehicleData);
-            for (Map.Entry<String, String> entry : vehicleData.entrySet()) {
-                out.println(entry.getKey() + ": " + entry.getValue());
-            }
         }
 
-        // Adapt the API response to a HashMap of key-value pairs
-        HashMap<String, String> vehicleData = new APIAdapter().adaptResponse(response);
+        for (Map.Entry<String, String> entry : vehicleData.entrySet()) {
+            out.println(entry.getKey() + ": " + entry.getValue());
+        }
 
         return vehicleData;
     }
