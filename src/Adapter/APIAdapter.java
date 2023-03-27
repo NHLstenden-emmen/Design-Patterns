@@ -8,7 +8,7 @@ public class APIAdapter implements AdapterInterface {
 
     // Method that converts a JSON response into a hashmap
     @Override
-    public HashMap<String, String> convertResponse(String JsonResponse) {
+    public HashMap<String, String> adaptResponse(String JsonResponse) {
 
         // Remove the square brackets from the JSON response
         JsonResponse = JsonResponse.substring(2, JsonResponse.length() - 2);
