@@ -5,11 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0caf7f57-c964-4b0a-9ba7-1546430f1b15" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/RDWReportBuilder/ReportAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Factory/FamilieRapport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Factory/VoertuigVergelijkenRapport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/report_TRHP81.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RDWReportBuilder/ReportBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RDWReportBuilder/ReportBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factory/ConcreteCreatorA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/KilometerstandControleRapport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factory/ConcreteCreatorB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/StandaardRapport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Factory/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/Rapport.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
