@@ -51,7 +51,7 @@ public class ReportBuilder {
                 e.printStackTrace();
             }
         }
-    /*public static void buildReportFirstAdmission(String firstAdmission, RDWResponseCache cache) {
+    public static void buildReportFirstAdmission(String firstAdmission, RDWResponseCache cache) {
        Command.FirstAdmissionCommand command = new FirstAdmissionCommand();
         try {
             HashMap<String, String> vehicleData = command.execute(firstAdmission);
@@ -70,7 +70,7 @@ public class ReportBuilder {
             // Handle the exception
             e.printStackTrace();
         }
-    }*/
+    }
 }
 
 
