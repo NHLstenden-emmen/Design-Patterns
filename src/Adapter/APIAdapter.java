@@ -1,5 +1,6 @@
 package Adapter;
 
+import java.io.Console;
 import java.util.HashMap;
 import java.util.Iterator;
 
@@ -9,6 +10,13 @@ public class APIAdapter implements AdapterInterface {
     // Method that converts a JSON response into a hashmap
     @Override
     public HashMap<String, String> adaptResponse(String JsonResponse) {
+
+        // Stops is response is empty (2 brackets)
+        if (JsonResponse.length() <= 2)
+        {
+            System.out.println("Your search has zero results");
+            System.exit(0); // Stop the program
+        }
 
         // Remove the square brackets from the JSON response
         JsonResponse = JsonResponse.substring(2, JsonResponse.length() - 2);
@@ -29,7 +37,10 @@ public class APIAdapter implements AdapterInterface {
             dataKeyValue[0] = dataKeyValue[0].replace("\"", "");
 
             // Add the key-value pair to the hashmap
-            vehicleData.put(dataKeyValue[0], dataKeyValue[1]);
+            if (dataKeyValue.length >= 2)
+            {
+                vehicleData.put(dataKeyValue[0], dataKeyValue[1]);
+            }
         }
 
         Iterator keyIterator = vehicleData.keySet().iterator();
