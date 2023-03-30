@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0caf7f57-c964-4b0a-9ba7-1546430f1b15" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/Factory/FamilieRapport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/FamilyReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Factory/KilometerstandControleRapport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/MilageCheckReport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Factory/Rapport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/Rapport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Factory/StandaardRapport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/StandaardRapport.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Factory/VoertuigVergelijkenRapport.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Factory/VoertuigVergelijkenRapport.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RDWReportBuilder/ReportBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RDWReportBuilder/ReportBuilder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
