@@ -44,9 +44,11 @@ public class Main {
         out.println("tellerstandoordeel: " + vehicleData.get("tellerstandoordeel"));
         out.println("Einde Adapter DEMO \n\n\n\n\n");
 
-        /*  Command Pattern 
+        /*  Command Pattern. Aangezien het met de API mogelijk is om op veel velden te sorteren maken wij voor
+        meest gebruikte commando's. Deze bevatten niet alleen het op bouwen van de API Call, maar ook het aanroepen
+        van de memento (wordt later behandeld) en het gebruiken van de adapter. */
 
-         */
+
     }
 }
 
