@@ -2,17 +2,17 @@ package Factory;
 
 import java.util.HashMap;
 
-public class VoertuigVergelijkenRapport implements Rapport {
+public class CompareVehicleReport implements Report {
     private HashMap<String, String> vehicleData1;
     private HashMap<String, String> vehicleData2;
 
-    public VoertuigVergelijkenRapport(HashMap<String, String> vehicleData1, HashMap<String, String> vehicleData2) {
+    public CompareVehicleReport(HashMap<String, String> vehicleData1, HashMap<String, String> vehicleData2) {
         this.vehicleData1 = vehicleData1;
         this.vehicleData2 = vehicleData2;
     }
 
     @Override
-    public void maakRapport() {
+    public void CreateReport() {
         StringBuilder report = new StringBuilder();
         report.append("Verschillen tussen voertuig 1 en voertuig 2:\n\n");
 

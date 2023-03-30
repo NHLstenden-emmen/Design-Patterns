@@ -2,15 +2,15 @@ package Factory;
 
 import java.util.HashMap;
 
-public class KilometerstandControleRapport  implements Rapport {
+public class MilageCheckReport implements Report {
 
     private HashMap<String, String> vehicleData;
 
-    public KilometerstandControleRapport(HashMap<String, String> vehicleData) {
+    public MilageCheckReport(HashMap<String, String> vehicleData) {
         this.vehicleData = vehicleData;
     }
 
-    public void maakRapport() {
+    public void CreateReport() {
 //        for (String kenteken : kentekens) {
             String napStatus = vehicleData.get("tellerstandoordeel");
             String verzekerd = vehicleData.get("wam_verzekerd");
@@ -19,6 +19,5 @@ public class KilometerstandControleRapport  implements Rapport {
 
             System.out.println(rapport);
 //        }
-
     }
 }
