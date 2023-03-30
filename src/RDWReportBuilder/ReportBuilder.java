@@ -6,70 +6,89 @@ import Command.TradeNameCommand;
 import Memento.RDWResponseCache;
 
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ReportBuilder {
+public class ReportBuilder implements ReportAdapter {
+
     public static void buildReport(String licensePlate, RDWResponseCache cache) {
-        Command.LicensePlateCommand command = new LicensePlateCommand();
-        try {
-            HashMap<String, String> vehicleData = command.execute(licensePlate);
-
-            // Build report using the vehicleData HashMap
-            // For example, you could write the data to a file:
-            String filename = "report_" + licensePlate + ".txt";
-            FileWriter writer = new FileWriter(filename);
-            for (Map.Entry<String, String> entry : vehicleData.entrySet()) {
-                writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
-            }
-            writer.close();
+        if (cache.hasResponse(licensePlate)) {
+            // Retrieve data from cache
+            HashMap<String, String> vehicleData = cache.getResponse(licensePlate);
+            // Build report using the retrieved data
+            String pathToReportsFolder = "Reports/";
+            String filename = pathToReportsFolder + "report_" + licensePlate + ReportAdapter.getFileExtension(licensePlate);
             System.out.println("Successfully saved data to " + filename);
-
-        } catch (Exception e) {
-            // Handle the exception
-            e.printStackTrace();
+        } else {
+            // Data not in cache, make API request
+            Command.LicensePlateCommand command = new LicensePlateCommand();
+            try {
+                HashMap<String, String> vehicleData = command.execute(licensePlate);
+                // Add data to cache
+                cache.addResponse(licensePlate, vehicleData);
+                // Build report using the retrieved data
+                String pathToReportsFolder = "Reports/";
+                String filename = pathToReportsFolder + "report_" + licensePlate + ReportAdapter.getFileExtension(licensePlate);
+                ReportAdapter.writeToFile(filename, vehicleData);
+                System.out.println("Successfully saved data to " + filename);
+            } catch (Exception e) {
+                // Handle the exception
+                e.printStackTrace();
+            }
         }
     }
-
     public static void buildReportMerk(String tradeName, RDWResponseCache cache) {
-        Command.TradeNameCommand command = new TradeNameCommand();
-        try {
-            HashMap<String, String> vehicleData = command.execute(tradeName);
-
-            // Build report using the vehicleData HashMap
-            // For example, you could write the data to a file:
-            String filename = "report_" + tradeName + ".txt";
-            FileWriter writer = new FileWriter(filename);
-            for (Map.Entry<String, String> entry : vehicleData.entrySet()) {
-                writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
-            }
-            writer.close();
+        if (cache.hasResponse(tradeName)) {
+            // Retrieve data from cache
+            HashMap<String, String> vehicleData = cache.getResponse(tradeName);
+            // Build report using the retrieved data
+            String pathToReportsFolder = "Reports/";
+            String filename = pathToReportsFolder + "report_" + tradeName + ReportAdapter.getFileExtension(tradeName);
             System.out.println("Successfully saved data to " + filename);
-
-        } catch (Exception e) {
-            // Handle the exception
-            e.printStackTrace();
+        } else {
+            // Data not in cache, make API request
+            Command.TradeNameCommand command = new TradeNameCommand();
+            try {
+                HashMap<String, String> vehicleData = command.execute(tradeName);
+                // Add data to cache
+                cache.addResponse(tradeName, vehicleData);
+                // Build report using the retrieved data
+                String pathToReportsFolder = "Reports/";
+                String filename = pathToReportsFolder + "report_" + tradeName + ReportAdapter.getFileExtension(tradeName);
+                ReportAdapter.writeToFile(filename, vehicleData);
+                System.out.println("Successfully saved data to " + filename);
+            } catch (Exception e) {
+                // Handle the exception
+                e.printStackTrace();
+            }
         }
     }
 
     public static void buildReportFirstAdmission(String firstAdmission, RDWResponseCache cache) {
-       Command.FirstAdmissionCommand command = new FirstAdmissionCommand();
-        try {
-            HashMap<String, String> vehicleData = command.execute(firstAdmission);
-
-            // Build report using the vehicleData HashMap
-            // For example, you could write the data to a file:
-            String filename = "report_" + firstAdmission + ".txt";
-            FileWriter writer = new FileWriter(filename);
-            for (Map.Entry<String, String> entry : vehicleData.entrySet()) {
-                writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
-            }
-            writer.close();
+        if (cache.hasResponse(firstAdmission)) {
+            // Retrieve data from cache
+            HashMap<String, String> vehicleData = cache.getResponse(firstAdmission);
+            // Build report using the retrieved data
+            String pathToReportsFolder = "Reports/";
+            String filename = pathToReportsFolder + "report_" + firstAdmission + ReportAdapter.getFileExtension(firstAdmission);
             System.out.println("Successfully saved data to " + filename);
-
-        } catch (Exception e) {
-            // Handle the exception
-            e.printStackTrace();
+        } else {
+            // Data not in cache, make API request
+            Command.FirstAdmissionCommand command = new FirstAdmissionCommand();
+            try {
+                HashMap<String, String> vehicleData = command.execute(firstAdmission);
+                // Add data to cache
+                cache.addResponse(firstAdmission, vehicleData);
+                // Build report using the retrieved data
+                String pathToReportsFolder = "Reports/";
+                String filename = pathToReportsFolder + "report_" + firstAdmission + ReportAdapter.getFileExtension(firstAdmission);
+                ReportAdapter.writeToFile(filename, vehicleData);
+                System.out.println("Successfully saved data to " + filename);
+            } catch (Exception e) {
+                // Handle the exception
+                e.printStackTrace();
+            }
         }
     }
 }

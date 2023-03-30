@@ -2,9 +2,11 @@
 import API.APIBuilder;
 import Adapter.APIAdapter;
 import Memento.RDWResponseCache;
+import RDWReportBuilder.ReportAdapter;
 import RDWReportBuilder.ReportBuilder;
 
 import Command.*;
+import RDWReportBuilder.TxtReportWriter;
 
 
 import java.io.FileWriter;
@@ -15,6 +17,7 @@ import static API.APIBuilder.BASE_REPORT_URL;
 import static API.APIBuilder.buildUrl;
 import static API.RDWAPIClient.getResponse;
 import static Formatters.Formatter.formatLicense;
+import static RDWReportBuilder.ReportBuilder.buildReport;
 import static java.lang.System.out;
 
 public class Main {
@@ -27,7 +30,6 @@ public class Main {
 
         // Create a HashMap to store the API parameters
         Map<String, String> params = new HashMap<>();
-        params.put("kenteken", formatLicense("TRHP81"));
 
         // Build the API URL to which the call will be made
         String url = buildUrl(BASE_REPORT_URL ,params);
@@ -37,12 +39,12 @@ public class Main {
 
         // Adapt the API response to a HashMap of key-value pairs
         HashMap<String, String> vehicleData = new APIAdapter().adaptResponse(response);
+        RDWResponseCache cache = new RDWResponseCache();
+        String licensePlate = "TRHP81";
+        buildReport(licensePlate, cache);
+        // Call the buildReport method with appropriate arguments
 
-        out.println("Adapter DEMO");
-        out.println("Kenteken: " + vehicleData.get("kenteken"));
-        out.println("vervaldatum_apk: " + vehicleData.get("vervaldatum_apk"));
-        out.println("tellerstandoordeel: " + vehicleData.get("tellerstandoordeel"));
-        out.println("Einde Adapter DEMO \n\n\n\n\n");
+
 
         /*  Command Pattern. Aangezien het met de API mogelijk is om op veel velden te sorteren maken wij voor
         meest gebruikte commando's. Deze bevatten niet alleen het op bouwen van de API Call, maar ook het aanroepen
