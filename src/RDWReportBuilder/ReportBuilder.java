@@ -66,6 +66,37 @@ public class ReportBuilder implements ReportAdapter {
             e.printStackTrace();
         }
     }
+
+    public static void buildComparisonReport(HashMap<String, String> vehicleDataCarOne, HashMap<String, String> vehicleDataCarTwo) {
+        try {
+            // Build report using the retrieved data
+            String pathToReportsFolder = "Reports/";
+            String filename = pathToReportsFolder + "Comparison_report_" + vehicleDataCarOne.get("kenteken") + "_VS_" + vehicleDataCarTwo.get("kenteken") + ReportAdapter.getFileExtension(vehicleDataCarOne.get("kenteken"));
+
+            String carsToBeCompared = vehicleDataCarOne.get("kenteken") + " vs " + vehicleDataCarTwo.get("kenteken");
+            String brandsCompared = "Voertuig 1: " + vehicleDataCarOne.get("merk") + " vs Voertuig 2: " + vehicleDataCarTwo.get("merk");
+            String firstRegisteredInTheNetherlands = "Voertuig 1: " + vehicleDataCarOne.get("datum_eerste_toelating") + " vs Voertuig 2: " + vehicleDataCarTwo.get("datum_eerste_toelating");
+            String engineCapacityComparison = "Voertuig 1: " + vehicleDataCarOne.get("cilinderinhoud") + " vs Voertuig 2: " + vehicleDataCarTwo.get("cilinderinhoud");
+            String engineCilinders = "Voertuig 1: " + vehicleDataCarOne.get("aantal_cilinders") + " vs Voertuig 2: " + vehicleDataCarTwo.get("aantal_cilinders");
+            String dismissedStatus = "Voertuig 1: " + vehicleDataCarOne.get("wacht_op_keuren") + " vs Voertuig 2: " + vehicleDataCarTwo.get("wacht_op_keuren");
+
+            // Compare the car on certain fields merk
+            HashMap<String, String> vehicleComparisonData = new HashMap<>();
+            vehicleComparisonData.put("Voertuigen die worden vergeleken: ", carsToBeCompared);
+            vehicleComparisonData.put("Merk: ", brandsCompared);
+            vehicleComparisonData.put("Eerste registratie Nederlands: ", firstRegisteredInTheNetherlands);
+            vehicleComparisonData.put("Cilinder inhoud: ", engineCapacityComparison);
+            vehicleComparisonData.put("Aantal cilinders: ", engineCilinders);
+            vehicleComparisonData.put("Wok status: ", dismissedStatus);
+
+            ReportAdapter.writeToFile(filename, vehicleComparisonData);
+            System.out.println("Successfully saved data to " + filename);
+        }
+        catch (Exception e) {
+            // Handle the exception
+            e.printStackTrace();
+        }
+    }
 }
 
 

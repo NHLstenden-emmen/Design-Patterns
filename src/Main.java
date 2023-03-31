@@ -48,6 +48,7 @@ public class Main {
         ReportBuilder.buildReport(licensePlateCommand.execute("TRHP81"));
 
         ReportBuilder.buildMileageReport(licensePlateCommand.execute("TRHP81"));
+        ReportBuilder.buildComparisonReport(licensePlateCommand.execute("TRHP81"), licensePlateCommand.execute("ZJGV15"));
     }
 }
 
