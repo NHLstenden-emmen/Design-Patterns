@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public interface ReportAdapter {
-    static FileWriter writeToFile(String filename, HashMap<String, String> vehicleData) throws IOException {
+public class FileBuilder {
+    public static FileWriter writeToFile(String filename, HashMap<String, String> vehicleData) throws IOException {
         FileWriter writer = new FileWriter(filename);
         for (Map.Entry<String, String> entry : vehicleData.entrySet()) {
             writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
@@ -15,7 +15,7 @@ public interface ReportAdapter {
         return writer;
     }
 
-  static String getFileExtension(String fileName) {
+    public static String getFileExtension(String fileName) {
         int lastDotIndex = fileName.lastIndexOf('.');
         if (lastDotIndex == -1) {
             return ""; // no file extension found

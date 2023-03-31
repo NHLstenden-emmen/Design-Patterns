@@ -1,23 +1,16 @@
 
-import API.APIBuilder;
 import Adapter.APIAdapter;
-import Memento.RDWResponseCache;
-import RDWReportBuilder.ReportAdapter;
 import RDWReportBuilder.ReportBuilder;
 
 import Command.*;
 
 
-import java.io.FileWriter;
 import java.util.HashMap;
 import java.util.Map;
 
 import static API.APIBuilder.BASE_REPORT_URL;
 import static API.APIBuilder.buildUrl;
 import static API.RDWAPIClient.getResponse;
-import static Formatters.Formatter.formatLicense;
-import static RDWReportBuilder.ReportBuilder.buildReport;
-import static java.lang.System.out;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -41,13 +34,14 @@ public class Main {
         meest gebruikte commando's. Deze bevatten niet alleen het op bouwen van de API Call, maar ook het aanroepen
         van de memento (wordt later behandeld) en het gebruiken van de adapter. */
         FirstAdmissionCommand firstAdmissionCommand = new FirstAdmissionCommand();
-        ReportBuilder reportBuilder = new ReportBuilder();
 
         LicensePlateCommand licensePlateCommand = new LicensePlateCommand();
         ReportBuilder.buildReport(licensePlateCommand.execute("TRHP81"));
 
         ReportBuilder.buildMileageReport(licensePlateCommand.execute("TRHP81"));
         ReportBuilder.buildComparisonReport(licensePlateCommand.execute("TRHP81"), licensePlateCommand.execute("ZJGV15"));
+
+
 
         ReportBuilder.buildFamilyReport(firstAdmissionCommand.execute("19980708"));
 

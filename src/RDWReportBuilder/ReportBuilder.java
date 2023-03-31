@@ -3,15 +3,15 @@ import Command.FirstAdmissionCommand;
 
 import java.util.HashMap;
 
-public class ReportBuilder implements ReportAdapter {
+public class ReportBuilder {
 
     public static void buildReport(HashMap<String, String> vehicleData) {
         try {
             // Build report using the retrieved data
             String pathToReportsFolder = "Reports/";
             String filename = pathToReportsFolder + "Standard_report_" + vehicleData.get("kenteken")
-                    + ReportAdapter.getFileExtension(vehicleData.get("kenteken"));
-            ReportAdapter.writeToFile(filename, vehicleData);
+                    + FileBuilder.getFileExtension(vehicleData.get("kenteken"));
+            FileBuilder.writeToFile(filename, vehicleData);
             System.out.println("Successfully saved data to " + filename);
         } catch (Exception e) {
             // Handle the exception
@@ -26,7 +26,7 @@ public class ReportBuilder implements ReportAdapter {
             // Build report using the retrieved data
             String pathToReportsFolder = "Reports/";
             String filename = pathToReportsFolder + "Family_report_" + vehicleDataOne.get("datum_eerste_toelating")
-                    + ReportAdapter.getFileExtension(vehicleDataOne.get("datum_eerste_toelating"));
+                    + FileBuilder.getFileExtension(vehicleDataOne.get("datum_eerste_toelating"));
 
             int carDate = Integer.parseInt(vehicleDataOne.get("datum_eerste_toelating"));
             HashMap<String, String> vehicleDataTwo = firstAdmissionCommand.execute(Integer.toString(carDate + 1));
@@ -41,7 +41,7 @@ public class ReportBuilder implements ReportAdapter {
             vehicleFamilyData.put("Oudere auto: ", youngerCar);
             vehicleFamilyData.put("Jongere auto: ", olderCar);
 
-            ReportAdapter.writeToFile(filename, vehicleFamilyData);
+            FileBuilder.writeToFile(filename, vehicleFamilyData);
             System.out.println("Successfully saved data to " + filename);
         }
         catch (Exception e) {
@@ -55,7 +55,7 @@ public class ReportBuilder implements ReportAdapter {
             // Build report using the retrieved data
             String pathToReportsFolder = "Reports/";
             String filename = pathToReportsFolder + "Mileage_report_" + vehicleData.get("kenteken")
-                    + ReportAdapter.getFileExtension(vehicleData.get("kenteken"));
+                    + FileBuilder.getFileExtension(vehicleData.get("kenteken"));
 
             String kenteken = vehicleData.get("kenteken");
             String mileageCheck = vehicleData.get("tellerstandoordeel");
@@ -65,7 +65,7 @@ public class ReportBuilder implements ReportAdapter {
             vehicleData.put("Kenteken", kenteken);
             vehicleData.put("Kloppende km stand", mileageCheck);
 
-            ReportAdapter.writeToFile(filename, vehicleData);
+            FileBuilder.writeToFile(filename, vehicleData);
             System.out.println("Successfully saved data to " + filename);
         }
         catch (Exception e) {
@@ -79,7 +79,7 @@ public class ReportBuilder implements ReportAdapter {
             // Build report using the retrieved data
             String pathToReportsFolder = "Reports/";
             String filename = pathToReportsFolder + "Comparison_report_" + vehicleDataCarOne.get("kenteken") + "_VS_"
-                    + vehicleDataCarTwo.get("kenteken") + ReportAdapter.getFileExtension(vehicleDataCarOne.get("kenteken"));
+                    + vehicleDataCarTwo.get("kenteken") + FileBuilder.getFileExtension(vehicleDataCarOne.get("kenteken"));
 
             String carsToBeCompared = vehicleDataCarOne.get("kenteken") + " vs " + vehicleDataCarTwo.get("kenteken");
             String brandsCompared = "Voertuig 1: " + vehicleDataCarOne.get("merk") + " vs Voertuig 2: " + vehicleDataCarTwo.get("merk");
@@ -101,7 +101,7 @@ public class ReportBuilder implements ReportAdapter {
             vehicleComparisonData.put("Aantal cilinders: ", engineCilinders);
             vehicleComparisonData.put("Wok status: ", dismissedStatus);
 
-            ReportAdapter.writeToFile(filename, vehicleComparisonData);
+            FileBuilder.writeToFile(filename, vehicleComparisonData);
             System.out.println("Successfully saved data to " + filename);
         }
         catch (Exception e) {
