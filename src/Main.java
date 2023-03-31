@@ -74,10 +74,10 @@ public class Main {
         everything through the command. The reports are set to open automatically using notepad. If that isn't applicable
         for your use case, you can find them in the folder Reports. */
         out.println("Factory DEMO");
-        standardReportFactory.CreateReport("TRHP81");
-        compareVehicleReportFactory.CreateReport("TRHP81", "ZJGV15");
+        standardReportFactory.CreateReport("ZJGV15");
+        compareVehicleReportFactory.CreateReport("TRHP81", "69RGHF");
         familyReportFactory.CreateReport("19980708");
-        milageCheckReportFactory.CreateReport("TRHP81");
+        milageCheckReportFactory.CreateReport("01VBBF");
         out.println("Einde Factory DEMO \n\n\n\n\n");
     }
 }
