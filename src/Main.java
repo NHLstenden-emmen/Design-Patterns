@@ -1,5 +1,8 @@
 
 import Adapter.APIAdapter;
+import Factory.CompareVehicleReportFactory;
+import Factory.ReportFactory;
+import Factory.StandardReportFactory;
 import RDWReportBuilder.ReportBuilder;
 
 import Command.*;
@@ -14,6 +17,8 @@ import static API.RDWAPIClient.getResponse;
 
 public class Main {
     public static void main(String[] args) throws Exception {
+        StandardReportFactory standardReportFactory = new StandardReportFactory();
+        CompareVehicleReportFactory compareVehicleReportFactory = new CompareVehicleReportFactory();
 
         /*  Adapter pattern. The adapter takes the json resposne, and puts each unique value in a hashmap
             this way we can use the data to look for specific terms, like the 'kenteken' and such. */
@@ -41,12 +46,13 @@ public class Main {
         ReportBuilder.buildMileageReport(licensePlateCommand.execute("TRHP81"));
         ReportBuilder.buildComparisonReport(licensePlateCommand.execute("TRHP81"), licensePlateCommand.execute("ZJGV15"));
 
-
-
         ReportBuilder.buildFamilyReport(firstAdmissionCommand.execute("19980708"));
 
         HashMap<String, String> vehicleData = new HashMap<>();
         vehicleData = firstAdmissionCommand.execute("19980708");
+
+        standardReportFactory.CreateReport("TRHP81");
+        compareVehicleReportFactory.CreateReport("TRHP81", "ZJGV15");
     }
 }
 
