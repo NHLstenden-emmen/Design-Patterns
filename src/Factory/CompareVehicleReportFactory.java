@@ -4,7 +4,6 @@ import Command.LicensePlateCommand;
 import RDWReportBuilder.ReportBuilder;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class CompareVehicleReportFactory extends ReportFactory {

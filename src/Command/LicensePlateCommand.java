@@ -10,7 +10,6 @@ import static API.APIBuilder.BASE_REPORT_URL;
 import static API.APIBuilder.buildUrl;
 import static API.RDWAPIClient.getResponse;
 import static Formatters.Formatter.formatLicense;
-import static java.lang.System.out;
 
 public class LicensePlateCommand implements Command{
     @Override

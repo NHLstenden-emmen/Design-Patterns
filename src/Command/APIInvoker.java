@@ -2,10 +2,7 @@ package Command;
 
 import java.util.HashMap;
 
-/**
- * This class acts as the invoker for the Commands.
- * Provides a method to execute the Command object's execute method.
- */
+// This class acts as the invoker for the Commands.
 public class APIInvoker {
     private Command command;
 

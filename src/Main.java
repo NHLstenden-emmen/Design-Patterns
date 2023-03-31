@@ -1,8 +1,6 @@
 
 import Adapter.APIAdapter;
-import Factory.CompareVehicleReportFactory;
-import Factory.ReportFactory;
-import Factory.StandardReportFactory;
+import Factory.*;
 import RDWReportBuilder.ReportBuilder;
 
 import Command.*;
@@ -19,6 +17,8 @@ public class Main {
     public static void main(String[] args) throws Exception {
         StandardReportFactory standardReportFactory = new StandardReportFactory();
         CompareVehicleReportFactory compareVehicleReportFactory = new CompareVehicleReportFactory();
+        FamilyReportFactory familyReportFactory = new FamilyReportFactory();
+        MilageCheckReportFactory milageCheckReportFactory = new MilageCheckReportFactory();
 
         /*  Adapter pattern. The adapter takes the json resposne, and puts each unique value in a hashmap
             this way we can use the data to look for specific terms, like the 'kenteken' and such. */
@@ -53,6 +53,8 @@ public class Main {
 
         standardReportFactory.CreateReport("TRHP81");
         compareVehicleReportFactory.CreateReport("TRHP81", "ZJGV15");
+        familyReportFactory.CreateReport("19980708");
+        milageCheckReportFactory.CreateReport("TRHP81");
     }
 }
 
