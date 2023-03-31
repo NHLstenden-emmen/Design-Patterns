@@ -5,10 +5,7 @@ import Command.LicensePlateCommand;
 import Command.TradeNameCommand;
 import Memento.RDWResponseCache;
 
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.Map;
 
 public class ReportBuilder implements ReportAdapter {
 
@@ -38,7 +35,7 @@ public class ReportBuilder implements ReportAdapter {
             }
         }
     }
-    public static void buildReportMerk(String tradeName, RDWResponseCache cache) {
+    public static void buildReportBrand(String tradeName, RDWResponseCache cache) {
         if (cache.hasResponse(tradeName)) {
             // Retrieve data from cache
             HashMap<String, String> vehicleData = cache.getResponse(tradeName);

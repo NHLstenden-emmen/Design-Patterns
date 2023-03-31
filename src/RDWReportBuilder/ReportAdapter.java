@@ -22,6 +22,5 @@ public interface ReportAdapter {
         }
         return fileName.substring(lastDotIndex + 1).toLowerCase();
     }
-
 }
 

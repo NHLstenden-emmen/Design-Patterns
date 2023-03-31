@@ -36,10 +36,6 @@ public class TradeNameCommand implements Command {
             cache.addResponse(url, vehicleData);
         }
 
-        for (Map.Entry<String, String> entry : vehicleData.entrySet()) {
-            out.println(entry.getKey() + ": " + entry.getValue());
-        }
-
         return vehicleData;
     }
 }
