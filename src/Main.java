@@ -46,6 +46,8 @@ public class Main {
 
         LicensePlateCommand licensePlateCommand = new LicensePlateCommand();
         ReportBuilder.buildReport(licensePlateCommand.execute("TRHP81"));
+
+        ReportBuilder.buildMileageReport(licensePlateCommand.execute("TRHP81"));
     }
 }
 
