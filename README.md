@@ -8,6 +8,9 @@ Hieronder een kleine beschrijving van de RDW
 
 RDW staat voor Rijksdienst voor het Wegverkeer en is een Nederlandse overheidsorganisatie die verantwoordelijk is voor de registratie en controle van voertuigen en rijbewijzen in Nederland. Het RDW houdt onder andere toezicht op de technische staat van voertuigen, de APK-keuring, de kilometerstandregistratie en de registratie van gestolen voertuigen. Het RDW speelt dus een belangrijke rol in het waarborgen van de verkeersveiligheid en het voorkomen van fraude in het wegverkeer.
 
+## Class Diagram:
+![image](https://user-images.githubusercontent.com/39293162/229165968-c5cd966a-15c7-4cdc-a7db-4e4dcc6529ad.png)
+
 ## Rapporten
 
 #### Standaard rapport
