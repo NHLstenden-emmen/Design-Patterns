@@ -42,13 +42,17 @@ public class Main {
         van de memento (wordt later behandeld) en het gebruiken van de adapter. */
         FirstAdmissionCommand firstAdmissionCommand = new FirstAdmissionCommand();
         ReportBuilder reportBuilder = new ReportBuilder();
-        ReportBuilder.buildReportFirstAdmission(firstAdmissionCommand.execute("19980708"));
 
         LicensePlateCommand licensePlateCommand = new LicensePlateCommand();
         ReportBuilder.buildReport(licensePlateCommand.execute("TRHP81"));
 
         ReportBuilder.buildMileageReport(licensePlateCommand.execute("TRHP81"));
         ReportBuilder.buildComparisonReport(licensePlateCommand.execute("TRHP81"), licensePlateCommand.execute("ZJGV15"));
+
+        ReportBuilder.buildFamilyReport(firstAdmissionCommand.execute("19980708"));
+
+        HashMap<String, String> vehicleData = new HashMap<>();
+        vehicleData = firstAdmissionCommand.execute("19980708");
     }
 }
 
