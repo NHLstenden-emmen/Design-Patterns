@@ -20,7 +20,7 @@ Op basis van een of meerdere kentekens wordt opgehaald of deze kloppend is (NAP 
 De data van twee door de gebruiker aangegeven voertuigen worden opgehaald. Nadat deze is opgehaald worden de verschillende velden met elkaar vergeleken (cilinder inhoud, kleur, voertuigsoort, APK Vervaldatum, BPM, etc.). Dit wordt weggeschreven naar een vergelijkingsrapport.
 
 #### Familie rapport
-Haalt op welke auto's van jou model op dezelfde dag zijn geregistreerd in Nederland. Opgezocht op basis van modelnaam, toelatingsdatum etc.
+Haalt op welke auto's van jou model op dezelfde dag (plus en min een dag) zijn geregistreerd in Nederland. Opgezocht op basis van modelnaam, toelatingsdatum etc.
 
 
 ## Patterns
