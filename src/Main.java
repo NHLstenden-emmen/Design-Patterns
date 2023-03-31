@@ -2,6 +2,7 @@
 import Adapter.APIAdapter;
 import Factory.*;
 import Command.*;
+import Memento.RDWResponseCache;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -64,7 +65,28 @@ public class Main {
         allows us to 'cache' these api responses, this way we don't need to make any unneeded requests. */
 
         out.println("Memento DEMO");
-        //HIER DE REST VAN DE DEMO
+        RDWResponseCache cache = new RDWResponseCache();
+
+        // Create a HashMap to store the vehicle data
+        HashMap<String, String> vehicleDataMomento = new HashMap<>();
+        vehicleDataMomento.put("kenteken", "TRHP81");
+        vehicleDataMomento.put("merk", "Mazda");
+        vehicleDataMomento.put("type", "mx-5");
+
+        // Add the response to the cache
+        cache.addResponse("TRHP81", vehicleDataMomento);
+
+        // Retrieve the response from the cache
+        HashMap<String, String> cachedResponse = cache.getResponse("TRHP81");
+
+        // Print the cached response
+        if (cachedResponse != null) {
+            System.out.println("Cached response:");
+            System.out.println(cachedResponse);
+        } else {
+            System.out.println("Response not found in cache.");
+        }
+
         out.println("Einde Memento DEMO \n\n\n\n\n");
 
         /* Factory pattern. The factory pattern can retrieve the report purely based on the input and will handle
