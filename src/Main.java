@@ -6,7 +6,6 @@ import RDWReportBuilder.ReportAdapter;
 import RDWReportBuilder.ReportBuilder;
 
 import Command.*;
-import RDWReportBuilder.TxtReportWriter;
 
 
 import java.io.FileWriter;
@@ -37,20 +36,16 @@ public class Main {
         // Make API call
         String response = getResponse(url);
 
-        // Adapt the API response to a HashMap of key-value pairs
-        HashMap<String, String> vehicleData = new APIAdapter().adaptResponse(response);
-        RDWResponseCache cache = new RDWResponseCache();
-        String licensePlate = "TRHP81";
-        buildReport(licensePlate, cache);
-        // Call the buildReport method with appropriate arguments
-
-
 
         /*  Command Pattern. Aangezien het met de API mogelijk is om op veel velden te sorteren maken wij voor
         meest gebruikte commando's. Deze bevatten niet alleen het op bouwen van de API Call, maar ook het aanroepen
         van de memento (wordt later behandeld) en het gebruiken van de adapter. */
+        FirstAdmissionCommand firstAdmissionCommand = new FirstAdmissionCommand();
+        ReportBuilder reportBuilder = new ReportBuilder();
+        ReportBuilder.buildReportFirstAdmission(firstAdmissionCommand.execute("19980708"));
 
-
+        LicensePlateCommand licensePlateCommand = new LicensePlateCommand();
+        ReportBuilder.buildReport(licensePlateCommand.execute("TRHP81"));
     }
 }
 
